@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import './App.css'
-import { decrement, increment } from './features/counter/counterSlice';
+import { useDispatch, useSelector } from "react-redux";
+import "./App.css";
+import { decrement, increment } from "./features/counter/counterSlice";
+import type { RootStates } from "./redux/store";
 
 function App() {
   const dispatch = useDispatch();
-  const {count} = useSelector((state) => state.counter);
-
+  const { count } = useSelector((state: RootStates) => state.counter);
 
   const handleIncrement = () => {
     dispatch(increment());
@@ -13,7 +13,7 @@ function App() {
 
   const handleDecrement = () => {
     dispatch(decrement());
-  }
+  };
 
   return (
     <div>
@@ -26,7 +26,6 @@ function App() {
   );
 }
 
-export default App
-
+export default App;
 
 // 3.32s
